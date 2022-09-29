@@ -77,11 +77,16 @@ def solution():
 
 
 # Count the total number of documents living in each country.
-    res=db.details.aggregate([{'$group':{'_id':"$country",'count':{'$count':{} } }}])
-    print(res)
-    reslist=list(res)
-    for i in reslist:
-        pprint(i)
+    # res=db.details.aggregate([{'$group':{'_id':"$country",'count':{'$count':{} } }}])
+    # print(res)
+    # reslist=list(res)
+    # for i in reslist:
+    #     pprint(i)
+
+# Find a document whose name is "Kirsten Jensen", and update his name to "CoreStack".
+
+    # res=db.details.update_many({'name':"Kirsten Jensen"},{'$set':{'name':"CoreStack"}})
+
 
 
 
