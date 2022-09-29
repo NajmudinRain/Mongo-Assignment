@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 import pandas as pd
-
+from pprint import pprint
 localConn=None
 def getConnection():
     try:
@@ -13,11 +13,21 @@ def getConnection():
 def solution():
     getConnection()
     data=pd.read_json('data.json')
+    # Insert the given data ( data is present inside data.json file ), to "details" collection, inside your "Employees" database. Make sure you are using python to insert the data. Do commit this python file in your repository.
     data=data.to_dict(orient="records")
     db=localConn['Employees']
     if 'details' not in db.list_collection_names():
         db.details.insert_many(data)
-    
+    # After inserting all the documents -> display all the documents. 2.1 Using find() 2.2 Using aggregate()
+    res=db.details.find({})
+    # reslist=list(res)
+    # for i in reslist:
+    #     print(i)
+
+    res=db.details.aggregate([])
+    reslist=list(res)
+    for i in reslist:
+        pprint(i)
 
 
 if __name__=="__main__":
