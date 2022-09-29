@@ -24,10 +24,20 @@ def solution():
     # for i in reslist:
     #     print(i)
 
-    res=db.details.aggregate([])
+    # res=db.details.aggregate([])
+    # reslist=list(res)
+    # for i in reslist:
+    #     pprint(i)
+# Display the fields --> name, salary, marital status and company of all the documents. ( Make sure no 
+#    other fields should be displayed apart from the above mentioned fields. )
+
+    res=db.details.find({},{"name":1,"Marital Status":1, "company":1,"_id":0})
     reslist=list(res)
     for i in reslist:
         pprint(i)
+
+  
+
 
 
 if __name__=="__main__":
