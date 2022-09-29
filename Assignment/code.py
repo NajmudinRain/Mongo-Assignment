@@ -45,12 +45,17 @@ def solution():
 
     # Display all the documents in descending order which have salary greater than equal to 3500
 
-    res=db.details.find({"salary":{"$gte":3500}}).sort("salary",-1)
+    # res=db.details.find({"salary":{"$gte":3500}}).sort("salary",-1)
+    # print(res)
+    # reslist=list(res)
+    # for i in reslist:
+    #     pprint(i)
+# Find all the documents which are from New Zealand and are married
+    res=db.details.find({"country":"New Zealand","Marital Status":"Married"},)
     print(res)
     reslist=list(res)
     for i in reslist:
         pprint(i)
-
 
   
 
