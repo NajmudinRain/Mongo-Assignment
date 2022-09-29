@@ -88,6 +88,11 @@ def solution():
     # res=db.details.update_many({'name':"Kirsten Jensen"},{'$set':{'name':"CoreStack"}})
 
 
+# Delete the document with then name "CoreStack".
+
+    # db.details.deleteMany({'name':"CoreStack"})
+
+
 
 
 if __name__=="__main__":
