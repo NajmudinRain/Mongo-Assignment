@@ -76,6 +76,14 @@ def solution():
     # print(len(reslist))
 
 
+# Count the total number of documents living in each country.
+    res=db.details.aggregate([{'$group':{'_id':"$country",'count':{'$count':{} } }}])
+    print(res)
+    reslist=list(res)
+    for i in reslist:
+        pprint(i)
+
+
 
 if __name__=="__main__":
     solution()
