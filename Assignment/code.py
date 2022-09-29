@@ -92,6 +92,16 @@ def solution():
 
     # db.details.deleteMany({'name':"CoreStack"})
 
+#  Display countries in ascending order, according to the earnings of each country. 
+#     For eg: People of China might earn $10000 and People of India might earn $20000 -- (sum of the salaries of all the people living in China and India respectively. So, the output should be -
+#     China $10000
+#     India $20000 )
+
+    res=db.details.aggregate([{'$group' :{'_id' : "$country",'totalsalary': { '$sum': "$salary" }}}] )
+    reslist=list(res)
+    for i in reslist:
+        pprint(i)
+
 
 
 
