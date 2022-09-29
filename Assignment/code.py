@@ -58,12 +58,22 @@ def solution():
     #     pprint(i)
 
 #   Display the names and salary of top 10 documents with least amount of salary.
-    res=db.details.find({},{"name":1,"salary":1,"_id":0}).sort("salary",1).limit(10)
-    print(res)
-    reslist=list(res)
-    for i in reslist:
-        pprint(i)
+    # res=db.details.find({},{"name":1,"salary":1,"_id":0}).sort("salary",1).limit(10)
+    # print(res)
+    # reslist=list(res)
+    # for i in reslist:
+    #     pprint(i)
 
+# Find all the documents whihc have "Inc" in their company's name. ( Make sure that your query is not 
+#    not taking much time to run. ) 
+
+    # res=db.details.find({"company":{'$regex':'Inc'}})
+    # print(res)
+    # reslist=list(res)
+    # print(reslist)
+    # for i in reslist:
+    #     pprint(i)
+    # print(len(reslist))
 
 
 
