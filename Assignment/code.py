@@ -51,13 +51,19 @@ def solution():
     # for i in reslist:
     #     pprint(i)
 # Find all the documents which are from New Zealand and are married
-    res=db.details.find({"country":"New Zealand","Marital Status":"Married"},)
+    # res=db.details.find({"country":"New Zealand","Marital Status":"Married"})
+    # print(res)
+    # reslist=list(res)
+    # for i in reslist:
+    #     pprint(i)
+
+#   Display the names and salary of top 10 documents with least amount of salary.
+    res=db.details.find({},{"name":1,"salary":1,"_id":0}).sort("salary",1).limit(10)
     print(res)
     reslist=list(res)
     for i in reslist:
         pprint(i)
 
-  
 
 
 
